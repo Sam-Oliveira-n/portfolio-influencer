@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo | Emily Lucio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="container">
+            <h1><i class="fa-solid fa-gear"></i> Painel Administrativo</h1>
+            <button class="btn-voltar" onclick="window.location.href='index.html'">
+                <i class="fa-solid fa-arrow-left"></i> Ver Site
+            </button>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="metricas">Métricas</button>
+            <button class="tab-btn" data-tab="redes">Redes Sociais</button>
+            <button class="tab-btn" data-tab="parcerias">Parcerias</button>
+            <button class="tab-btn" data-tab="depoimentos">Depoimentos</button>
+            <button class="tab-btn" data-tab="cupons">Cupons</button>
+        </div>
+
+        <div class="tab-content active" id="tab-metricas">
+            <h2>Métricas</h2>
+            <div class="form-group">
+                <label>Seguidores</label>
+                <input type="text" id="metricas-seguidores">
+            </div>
+            <div class="form-group">
+                <label>Engajamento</label>
+                <input type="text" id="metricas-engajamento">
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-redes">
+            <h2>Redes Sociais</h2>
+            <div id="redes-editor"></div>
+            <button class="btn-add" onclick="adicionarRede()">+ Adicionar Rede</button>
+        </div>
+
+        <div class="tab-content" id="tab-parcerias">
+            <h2>Parcerias</h2>
+            <div id="parcerias-editor"></div>
+            <button class="btn-add" onclick="adicionarParceria()">+ Adicionar Parceria</button>
+        </div>
+
+        <div class="tab-content" id="tab-depoimentos">
+            <h2>Depoimentos</h2>
+            <div id="depoimentos-editor"></div>
+            <button class="btn-add" onclick="adicionarDepoimento()">+ Adicionar Depoimento</button>
+        </div>
+
+        <div class="tab-content" id="tab-cupons">
+            <h2>Cupons</h2>
+            <div id="cupons-editor"></div>
+            <button class="btn-add" onclick="adicionarCupom()">+ Adicionar Cupom</button>
+        </div>
+
+        <div class="acoes">
+            <button class="btn-salvar" onclick="baixarArquivoDados()">
+                <i class="fa-solid fa-download"></i> Baixar dados.js
+            </button>
+            <button class="btn-limpar" onclick="limparDados()">
+                <i class="fa-solid fa-trash"></i> Limpar alterações
+            </button>
+        </div>
+    </main>
+
+    <script src="js/dados.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

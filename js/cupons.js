@@ -1,29 +1,29 @@
 // =====================
-// DADOS DOS CUPONS
+// DADOS DOS CUPONS VINDO DIRETAMENTE DE DADOS.JS
 // =====================
-
-const cupons = [
-    {
-        loja: "Glam",
-        desconto: "25% OFF",
-        codigo: "EMILYG10",
-        descricao: "Desconto na assinatura e nos produtos de beleza e cuidado pessoal.",
-        validade: "",
-        link: "https://sua.glam.com.br/promocoes/partner/EMILYG10",
-        detalhes: "Assinantes tem 40% de desconto em todos os produtos.",
-        destaque: true   // este cupom terá destaque visual
-    },
-    {
-        loja: "Delugui Calçados",
-        desconto: "10% OFF",
-        codigo: "EMILY",
-        descricao: "Desconto em todos os produtos.",
-        validade: "",
-        link: "https://deluguicalcados.com.br/",
-        detalhes: "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos)."
-    },
-    
-];
+const cupons = dados.cupons;
+//const cupons = [
+//    {
+//       loja: "Glam",
+//        desconto: "25% OFF",
+//        codigo: "EMILYG10",
+//        descricao: "Desconto na assinatura e nos produtos de beleza e cuidado pessoal.",
+//        validade: "",
+//        link: "https://sua.glam.com.br/promocoes/partner/EMILYG10",
+//        detalhes: "Assinantes tem 40% de desconto em todos os produtos.",
+//        destaque: true   // este cupom terá destaque visual
+//    },
+//    {
+//        loja: "Delugui Calçados",
+//        desconto: "10% OFF",
+//        codigo: "EMILY",
+//        descricao: "Desconto em todos os produtos.",
+//        validade: "",
+//        link: "https://deluguicalcados.com.br/",
+//        detalhes: "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos)."
+//    },
+//    
+//];
 
 // =====================
 // ELEMENTOS

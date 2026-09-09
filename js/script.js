@@ -1,10 +1,8 @@
-// =====================
-// MÉTRICAS (edite manualmente)
-// =====================
-const metricas = {
-    seguidores: "9.6k",
-    engajamento: "12%"
-};
+// Os dados agora vêm de dados.js
+const metricas = dados.metricas;
+const redes = dados.redes;
+const parcerias = dados.parcerias;
+const depoimentos = dados.depoimentos;
 
 function aplicarMetricas() {
     const numeros = document.querySelectorAll('.stat-number');
@@ -86,22 +84,7 @@ function enviarContatoWhatsApp() {
 // =====================
 // DADOS
 // =====================
-const redes = [
-    { nome: "Instagram", icone: "fa-brands fa-instagram", seguidores: "9,6k", link: "https://www.instagram.com/emilylucioo/" },
-    // Adicione outras redes quando desejar
-];
 
-const parcerias = [
-    { titulo: "Marca de Moda", img: "https://via.placeholder.com/400x250", desc: "Campanha de lançamento", detalhes: "Posts + stories com alcance de 500K" },
-    { titulo: "Cosméticos", img: "https://via.placeholder.com/400x250", desc: "Linha de skincare", detalhes: "Vídeo review com 200K views" },
-    { titulo: "Alimentação Saudável", img: "https://via.placeholder.com/400x250", desc: "Parceria trimestral", detalhes: "Conteúdo mensal + presença em evento" }
-];
-
-const depoimentos = [
-    { nome: "Marca A", texto: "Profissionalismo e resultado acima do esperado. A influencer engajou muito nosso público." },
-    { nome: "Marca B", texto: "Conteúdo autêntico e de alta qualidade. A comunidade dela é muito fiel." },
-    { nome: "Marca C", texto: "Foi um prazer trabalhar com ela. Entrega rápida e ótimos números." }
-];
 
 // =====================
 // MODAL
