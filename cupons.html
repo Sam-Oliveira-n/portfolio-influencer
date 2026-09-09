@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupons de Desconto | Emily Lucio</title>
+    <meta name="description" content="Aproveite os cupons exclusivos e descontos especiais das marcas parceiras da Emily Lucio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/cupons.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="img/perfil.JPG" alt="Emily Lucio" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">Emily Lucio</span>
+                    <span class="logo-tagline">Cupons Exclusivos</span>
+                </div>
+            </a>
+            <a href="index.html" class="btn-voltar">
+                <i class="fa-solid fa-arrow-left"></i> Inicio
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero-cupons">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-tags"></i> Parcerias Exclusivas
+            </div>
+            <h1 class="hero-title">Cupons de <span>Desconto</span></h1>
+            <p class="hero-subtitle">Aproveite as ofertas especiais que consegui para você!</p>
+        </div>
+    </section>
+
+    <!-- ==================== LISTA DE CUPONS ==================== -->
+    <section class="section-cupons">
+        <div class="container">
+            <div class="cupons-grid" id="cuponsGrid">
+                <!-- Os cards serão gerados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Emily Lucio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ==================== MODAL DE CUPOM ==================== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/cupons.js"></script>
+</body>
+</html>
