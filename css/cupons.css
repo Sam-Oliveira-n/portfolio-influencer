@@ -37,8 +37,11 @@ body { font-family:'Poppins',sans-serif; background:var(--gray); color:var(--dar
 .hero-title span { color:var(--primary); }
 .hero-subtitle { color:rgba(255,255,255,0.8); font-size:1.2rem; }
 
-/* Lista de cupons */
+/* Seção de cupons */
 .section-cupons { padding:80px 0; }
+.section-titulo { text-align:center; font-family:'Playfair Display',serif; font-weight:700; font-size:2.2rem; margin-bottom:40px; }
+
+/* Grade de cupons */
 .cupons-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:30px; max-width:1200px; margin:0 auto; padding:0 30px; }
 
 /* Card de cupom */
@@ -55,9 +58,58 @@ body { font-family:'Poppins',sans-serif; background:var(--gray); color:var(--dar
 .btn-copiar:hover { background:var(--secondary); }
 .btn-usar { display:block; text-align:center; background:var(--accent); color:var(--dark); padding:12px; border-radius:10px; text-decoration:none; font-weight:600; transition:var(--transition); }
 .btn-usar:hover { background:#c9a932; }
-
-/* Validade */
 .cupom-validade { font-size:0.85rem; color:#999; text-align:center; margin-top:10px; }
+
+/* ========== CUPOM EM DESTAQUE ========== */
+.cupom-card.destaque {
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    animation: brilhoDestaque 3s ease-in-out infinite;
+    position: relative;
+}
+
+.cupom-card.destaque::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    animation: girarBrilho 8s linear infinite;
+}
+
+.cupom-card.destaque .cupom-header {
+    background: linear-gradient(135deg, var(--accent), #FF8C00);
+    color: var(--dark);
+}
+
+.cupom-card.destaque .cupom-desconto,
+.cupom-card.destaque .cupom-loja {
+    color: var(--dark);
+}
+
+@keyframes brilhoDestaque {
+    0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.8); }
+}
+
+@keyframes girarBrilho {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Canvas de partículas */
+#particulasDestaqueCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
 
 /* Modal */
 .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:2000; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:opacity 0.3s, visibility 0.3s; }

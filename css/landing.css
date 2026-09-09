@@ -97,4 +97,13 @@ body { font-family:'Poppins',sans-serif; background:linear-gradient(135deg, #1A1
     .landing-foto { width:100px; height:100px; }
     .landing-titulo { font-size:2rem; }
 }
-
+/* ========== CANVAS DE PARTÍCULAS ========== */
+#particulasCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
