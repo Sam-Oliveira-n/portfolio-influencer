@@ -13,46 +13,159 @@
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { font-family:'Poppins',sans-serif; background:var(--gray); color:var(--dark); line-height:1.7; overflow-x:hidden; }
+html { scroll-behavior:smooth; scroll-padding-top:80px; }
+body { font-family:'Poppins',sans-serif; background:var(--white); color:var(--dark); line-height:1.7; overflow-x:hidden; }
 
 /* Header */
-.header { position:fixed; top:0; left:0; width:100%; z-index:1000; background:rgba(26,26,26,0.97); backdrop-filter:blur(20px); padding:12px 0; box-shadow:0 5px 30px rgba(0,0,0,0.3); }
+.header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:transparent;
+    padding:15px 0;
+    transition:var(--transition);
+}
+.header.scrolled {
+    background:rgba(26,26,26,0.97);
+    backdrop-filter:blur(20px);
+    padding:8px 0;
+    box-shadow:0 5px 30px rgba(0,0,0,0.3);
+}
 .header-container { display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:0 30px; }
 .logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
-.logo-img { width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--white); }
+.logo-img { width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid var(--white); box-shadow:0 4px 15px rgba(0,0,0,0.3); transition:var(--transition); }
+.header.scrolled .logo-img { width:40px; height:40px; }
 .logo-text { display:flex; flex-direction:column; }
-.logo-name { font-family:'Playfair Display',serif; font-weight:700; font-size:1.3rem; color:var(--white); line-height:1.1; }
+.logo-name { font-family:'Playfair Display',serif; font-weight:700; font-size:1.4rem; color:var(--white); line-height:1.1; }
 .logo-tagline { font-size:0.65rem; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; }
-.btn-voltar { color:var(--white); text-decoration:none; font-weight:500; padding:10px 20px; border-radius:50px; border:2px solid rgba(255,255,255,0.4); transition:var(--transition); display:inline-flex; align-items:center; gap:8px; }
+.btn-voltar {
+    color:var(--white);
+    text-decoration:none;
+    font-weight:500;
+    padding:10px 20px;
+    border-radius:50px;
+    border:2px solid rgba(255,255,255,0.4);
+    transition:var(--transition);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
 .btn-voltar:hover { background:var(--primary); border-color:var(--primary); }
 
-/* Hero */
-.hero-cupons { position:relative; min-height:45vh; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #1A1A1A 0%, #3A1A2E 100%); overflow:hidden; padding-top:100px; }
-.hero-overlay { position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(231,84,128,0.2) 0%, transparent 60%); }
+/* Hero escuro (igual ao portfólio) */
+.hero-cupons {
+    position:relative;
+    min-height:55vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 50%, #3A1A2E 100%);
+    overflow:hidden;
+    padding-top:100px;
+}
+.hero-overlay {
+    position:absolute;
+    inset:0;
+    background: radial-gradient(ellipse at center, rgba(231,84,128,0.2) 0%, transparent 60%);
+    pointer-events:none;
+}
 .hero-content { position:relative; z-index:2; text-align:center; padding:0 30px; }
-.hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:8px 20px; border-radius:50px; color:rgba(255,255,255,0.9); margin-bottom:20px; }
+.hero-badge {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:8px 20px;
+    border-radius:50px;
+    color:rgba(255,255,255,0.9);
+    margin-bottom:20px;
+}
 .hero-badge i { color:var(--accent); }
 .hero-title { font-family:'Playfair Display',serif; font-weight:800; font-size:3.5rem; color:var(--white); margin-bottom:10px; }
 .hero-title span { color:var(--primary); }
 .hero-subtitle { color:rgba(255,255,255,0.8); font-size:1.2rem; }
 
-/* Seção de cupons */
-.section-cupons { padding:80px 0; }
-.section-titulo { text-align:center; font-family:'Playfair Display',serif; font-weight:700; font-size:2.2rem; margin-bottom:40px; }
+/* Seção de cupons (fundo branco) */
+.section-cupons {
+    padding: 80px 0 100px;
+    background: var(--white);
+}
+.section-titulo {
+    text-align:center;
+    color: var(--dark);
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    animation: flutuarTitulo 4s ease-in-out infinite;
+}
+.section-titulo::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
+@keyframes flutuarTitulo {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
 
 /* Grade de cupons */
 .cupons-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:30px; max-width:1200px; margin:0 auto; padding:0 30px; }
 
 /* Card de cupom */
-.cupom-card { background:var(--white); border-radius:var(--border-radius); overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition); cursor:pointer; position:relative; }
-.cupom-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-lg); }
-.cupom-header { background:linear-gradient(135deg, var(--primary), var(--secondary)); padding:25px 20px; text-align:center; color:var(--white); }
+.cupom-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow:hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    cursor:pointer;
+    position:relative;
+    border: 1px solid rgba(0,0,0,0.04);
+    animation: aparecerCard 0.8s ease both;
+    animation-delay: calc(var(--i, 0) * 0.1s);
+}
+
+@keyframes aparecerCard {
+    from { opacity:0; transform: translateY(40px); }
+    to { opacity:1; transform: translateY(0); }
+}
+
+.cupom-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cupom-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding:25px 20px;
+    text-align:center;
+    color: var(--white);
+    transition: transform 0.5s;
+}
+.cupom-card:hover .cupom-header {
+    transform: scale(1.05);
+}
 .cupom-header .cupom-desconto { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:700; }
 .cupom-header .cupom-loja { font-size:1rem; opacity:0.9; }
 .cupom-body { padding:20px; }
 .cupom-descricao { color:#555; margin-bottom:15px; }
-.cupom-codigo { background:var(--gray); padding:12px 15px; border-radius:10px; display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
+.cupom-codigo {
+    background: var(--gray);
+    padding:12px 15px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
 .cupom-codigo span { font-weight:600; letter-spacing:1px; }
 .btn-copiar { background:var(--primary); color:var(--white); border:none; padding:8px 15px; border-radius:8px; cursor:pointer; transition:var(--transition); font-weight:500; }
 .btn-copiar:hover { background:var(--secondary); }
@@ -60,14 +173,14 @@ body { font-family:'Poppins',sans-serif; background:var(--gray); color:var(--dar
 .btn-usar:hover { background:#c9a932; }
 .cupom-validade { font-size:0.85rem; color:#999; text-align:center; margin-top:10px; }
 
-/* ========== CUPOM EM DESTAQUE ========== */
+/* Destaque */
 .cupom-card.destaque {
     border: 2px solid var(--accent);
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
     animation: brilhoDestaque 3s ease-in-out infinite;
     position: relative;
+    z-index: 1;
 }
-
 .cupom-card.destaque::before {
     content: '';
     position: absolute;
@@ -79,12 +192,10 @@ body { font-family:'Poppins',sans-serif; background:var(--gray); color:var(--dar
     pointer-events: none;
     animation: girarBrilho 8s linear infinite;
 }
-
 .cupom-card.destaque .cupom-header {
     background: linear-gradient(135deg, var(--accent), #FF8C00);
     color: var(--dark);
 }
-
 .cupom-card.destaque .cupom-desconto,
 .cupom-card.destaque .cupom-loja {
     color: var(--dark);
@@ -128,4 +239,5 @@ body { font-family:'Poppins',sans-serif; background:var(--gray); color:var(--dar
 @media (max-width:768px) {
     .hero-title { font-size:2.5rem; }
     .cupons-grid { grid-template-columns:1fr; }
+    .section-titulo { font-size:2rem; }
 }
