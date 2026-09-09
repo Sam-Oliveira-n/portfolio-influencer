@@ -15,7 +15,7 @@ const cupons = [
     },
     {
         loja: "Delugui Calçados",
-        desconto: "10%",
+        desconto: "10% OFF",
         codigo: "EMILY",
         descricao: "Desconto em todos os produtos.",
         validade: "",
