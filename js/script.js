@@ -165,6 +165,69 @@ function criarCarrossel(containerId, dotsId, itens, montarCard, aoClicar) {
     return { criarSlides, mudarSlide, getCurrentSlide: () => currentSlide, setCardsPorSlide: val => cardsPorSlide = val };
 }
 
+// ==================== CAMPANHAS ====================
+const campanhasGrid = document.getElementById('campanhasGrid');
+
+function renderizarCampanhas() {
+    if (!campanhasGrid || !dados.campanhas) return;
+
+    campanhasGrid.innerHTML = dados.campanhas.map(camp => `
+        <div class="campanha-card reveal" data-id="${camp.id}">
+            <div class="campanha-img-wrapper">
+                <img src="${camp.img}" alt="${camp.titulo}" loading="lazy">
+                <span class="campanha-badge">${camp.categoria}</span>
+            </div>
+            <div class="campanha-body">
+                <span class="campanha-marca">${camp.marca}</span>
+                <h3 class="campanha-titulo">${camp.titulo}</h3>
+                <p class="campanha-desc">${camp.descricaoCurta}</p>
+                <div class="campanha-resultados">
+                    ${camp.resultados.map(r => `
+                        <div class="campanha-resultado">
+                            <span class="valor">${r.valor}</span>
+                            <span class="label">${r.label}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    // Clique abre o modal de detalhes
+    document.querySelectorAll('.campanha-card').forEach(card => {
+        card.addEventListener('click', () => abrirModalCampanha(parseInt(card.dataset.id)));
+    });
+}
+
+function abrirModalCampanha(id) {
+    const camp = dados.campanhas.find(c => c.id === id);
+    if (!camp) return;
+
+    const modalBody = document.getElementById('modalBody');
+    modalBody.innerHTML = `
+        <div class="campanha-modal">
+            <span class="modal-marca">${camp.marca}</span>
+            <h3>${camp.titulo}</h3>
+            <p class="campanha-data">${camp.data} • ${camp.categoria}</p>
+            <img src="${camp.img}" alt="${camp.titulo}">
+            <p>${camp.descricaoLonga}</p>
+            <div class="modal-resultados">
+                ${camp.resultados.map(r => `
+                    <div>
+                        <span class="valor">${r.valor}</span>
+                        <span class="label">${r.label}</span>
+                    </div>
+                `).join('')}
+            </div>
+            ${camp.link ? `<a href="${camp.link}" target="_blank" class="btn btn-primary" style="margin-top:1.5rem;display:inline-block;">Ver mais</a>` : ''}
+        </div>
+    `;
+
+    document.getElementById('modalOverlay').classList.add('active');
+}
+
+// Chama a renderização ao carregar
+renderizarCampanhas();
 // =====================
 // CARROSSEL DE PARCERIAS
 // =====================
