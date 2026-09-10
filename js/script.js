@@ -9,7 +9,7 @@ function aplicarMetricas() {
     // Agora temos exatamente 2 spans: Seguidores e Engajamento
     if (numeros.length >= 2) {
         numeros[0].textContent = metricas.seguidores;
-        numeros[1].textContent = metricas.engajamento;
+        numeros[1].textContent = metricas.visualizacoes;
     }
 }
 

@@ -1,7 +1,7 @@
 const dados = {
     "metricas": {
         "seguidores": "9,6k",
-        "engajamento": "12%"
+        "visualizacoes": "150k/mês"
     },
     "redes": [
         {
