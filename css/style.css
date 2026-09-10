@@ -157,3 +157,50 @@ body { font-family:'Poppins',sans-serif; background:var(--white); color:var(--da
     .card { flex:0 0 100%; }
     .redes-grid { grid-template-columns:1fr; }
 }
+.hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    color: #fff;
+}
+
+.stat i {
+    font-size: 1.3rem;
+    color: #D4AF37; /* dourado, combina com o estilo influencer */
+    margin-bottom: 0.3rem;
+    transition: transform 0.3s ease;
+}
+
+.stat:hover i {
+    transform: scale(1.15);
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.85;
+}
+.stat i {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
