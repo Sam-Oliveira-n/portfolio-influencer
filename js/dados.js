@@ -154,6 +154,77 @@ const dados = {
             "link": "https://deluguicalcados.com.br/",
             "detalhes": "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos).",
             "destaque": false
-        }
+        },
+        {
+            "loja": "Glam beauty",
+            "desconto": "25% OFF",
+            "codigo": "EMILYG10",
+            "descricao": "Cupom válido para todos os produtos.",
+            "validade": "",
+            "link": "https:///",
+            "detalhes": "Use o código ao finalizar a compra para obter 25% de desconto (válido para todos produtos).",
+            "destaque": true
+        },
+        {
+            "loja": "Legbox",
+            "desconto": "10% OFF",
+            "codigo": "EMILYGLUCIO10",
+            "descricao": "Cupom válido para todos os produtos.",
+            "validade": "",
+            "link": "https:///",
+            "detalhes": "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos).",
+            "destaque": false
+        },
+        {
+            "loja": "Esbelt",
+            "desconto": "10% OFF",
+            "codigo": "EMILYLUCIO",
+            "descricao": "Cupom válido para todos os produtos.",
+            "validade": "",
+            "link": "https:///",
+            "detalhes": "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos).",
+            "destaque": false
+        },
+        {
+            "loja": "Esbelt",
+            "desconto": "10% OFF",
+            "codigo": "EMILYLUCIO",
+            "descricao": "Cupom válido para todos os produtos.",
+            "validade": "",
+            "link": "https:///",
+            "detalhes": "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos).",
+            "destaque": false
+        },
+        {
+            "loja": "Belletonn",
+            "desconto": "10% OFF",
+            "codigo": "EMILYGLUCIO",
+            "descricao": "Cupom válido para todos os produtos.",
+            "validade": "",
+            "link": "https:///",
+            "detalhes": "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos).",
+            "destaque": false
+        },
+        {
+            "loja": "Ambrô",
+            "desconto": "5% OFF",
+            "codigo": "EMILYGLUCIO",
+            "descricao": "Cupom válido para todos os produtos.",
+            "validade": "",
+            "link": "https:///",
+            "detalhes": "Use o código ao finalizar a compra para obter 5% de desconto (válido para todos produtos).",
+            "destaque": false
+        },
+        {
+            "loja": "Natulha",
+            "desconto": "10% OFF",
+            "codigo": "EMILY",
+            "descricao": "Cupom válido para todos os produtos.",
+            "validade": "",
+            "link": "https:///",
+            "detalhes": "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos).",
+            "destaque": false
+        },
+        
     ]
 };
