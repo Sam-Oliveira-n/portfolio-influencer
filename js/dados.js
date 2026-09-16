@@ -224,6 +224,16 @@ const dados = {
             "link": "https:///",
             "detalhes": "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos).",
             "destaque": false
+        },      
+        {
+            "loja": "Loofer",
+            "desconto": "15% OFF",
+            "codigo": "EMILY15",
+            "descricao": "Cupom válido para todos os produtos.",
+            "validade": "",
+            "link": "https:///",
+            "detalhes": "Use o código ao finalizar a compra para obter 10% de desconto (válido para todos produtos).",
+            "destaque": false
         },
         
     ]
